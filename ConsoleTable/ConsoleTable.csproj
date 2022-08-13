@@ -2,6 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Console Table</Title>
+    <Authors>BrunoVT1992</Authors>
+    <Description>Used to create tables in a console window.</Description>
+    <PackageProjectUrl>https://github.com/BrunoVT1992/ConsoleTable</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BrunoVT1992/ConsoleTable</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Deterministic>True</Deterministic>
   </PropertyGroup>
 
 </Project>
