@@ -75,7 +75,7 @@ namespace ConsoleTable
             return maximumCellWidths;
         }
 
-        private StringBuilder CreateTopLine(int[] maximumCellWidths, int rowColumnCount, StringBuilder formattedTable)
+        private static StringBuilder CreateTopLine(int[] maximumCellWidths, int rowColumnCount, StringBuilder formattedTable)
         {
             for (int i = 0; i < rowColumnCount; i++)
             {
@@ -92,7 +92,7 @@ namespace ConsoleTable
             return formattedTable;
         }
 
-        private StringBuilder CreateBottomLine(int[] maximumCellWidths, int rowColumnCount, StringBuilder formattedTable)
+        private static StringBuilder CreateBottomLine(int[] maximumCellWidths, int rowColumnCount, StringBuilder formattedTable)
         {
             for (int i = 0; i < rowColumnCount; i++)
             {
@@ -141,7 +141,7 @@ namespace ConsoleTable
             return formattedTable;
         }
 
-        private StringBuilder CreateSeperatorLine(int[] maximumCellWidths, int previousRowColumnCount, int rowColumnCount, StringBuilder formattedTable)
+        private static StringBuilder CreateSeperatorLine(int[] maximumCellWidths, int previousRowColumnCount, int rowColumnCount, StringBuilder formattedTable)
         {
             var maximumCells = Math.Max(previousRowColumnCount, rowColumnCount);
 
