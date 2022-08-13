@@ -51,7 +51,7 @@ namespace ConsoleTable
             }
 
             var maximumCellWidths = new int[maximumColumns];
-            for (int i = 0; i < maximumCellWidths.Count(); i++)
+            for (int i = 0; i < maximumCellWidths.Length; i++)
                 maximumCellWidths[i] = 0;
 
             var paddingCount = 0;
@@ -206,7 +206,7 @@ namespace ConsoleTable
 
             int[] maximumCellWidths = GetMaxCellWidths(table);
 
-            formattedTable = CreateTopLine(maximumCellWidths, nextRow.Count(), formattedTable);
+            formattedTable = CreateTopLine(maximumCellWidths, nextRow.Length, formattedTable);
 
             int rowIndex = 0;
             int lastRowIndex = table.Count - 1;
@@ -226,13 +226,13 @@ namespace ConsoleTable
                 if (rowIndex != lastRowIndex)
                 {
                     nextRow = table[rowIndex + 1];
-                    formattedTable = CreateSeperatorLine(maximumCellWidths, previousRow.Count(), nextRow.Count(), formattedTable);
+                    formattedTable = CreateSeperatorLine(maximumCellWidths, previousRow.Length, nextRow.Length, formattedTable);
                 }
 
                 rowIndex++;
             }
 
-            formattedTable = CreateBottomLine(maximumCellWidths, previousRow.Count(), formattedTable);
+            formattedTable = CreateBottomLine(maximumCellWidths, previousRow.Length, formattedTable);
 
             return formattedTable.ToString();
         }
